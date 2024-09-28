@@ -1,5 +1,7 @@
 console.log('Greetings')
 
+const secretMessage = "It's dangerous to go alone."
+localStorage.setItem("It's a secret to everybody.", secretMessage)
 
     //Get the current hour
     const hours = new Date().getHours()
