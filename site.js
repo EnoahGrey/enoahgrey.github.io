@@ -45,33 +45,24 @@ localStorage.setItem("It's a secret to everybody.", secretMessage)
     }
 
     showImages()   
-    
-    setTimeout(() => {
-        // code to run ONCE after 5 seconds
-    }, 5000)
-    
+       
     setInterval(() => {
         // code to run EVERY 5 seconds
+        currentImage++;
+        showImages()
     }, 5000)
 
-    function previousImage()
+    const prevButton = document.querySelector('#prev');
+    prevButton.addEventListener('click', () => 
     {
-            currentImage = currentImage--;
-            showImages();
-    }
-    const prevButton = document.getElementById("#prev");
-    prevButton.addEventListener("Click", () => 
-    {
-        previousImage();
+        
+        currentImage--;
+        showImages()
     })
-    
-    function nextImage()
+
+    const nextButton = document.querySelector('#next');
+    nextButton.addEventListener('click', () => 
     {
-            currentImage = currentImage++;
-            showImages;
-    }
-    const nextButton = document.getElementById("#next");
-    nextButton.addEventListener("Click", () => 
-    {
-        nextImage();
+        currentImage++;
+        showImages()
     })
