@@ -66,3 +66,7 @@ localStorage.setItem("It's a secret to everybody.", secretMessage)
         currentImage++;
         showImages()
     })
+
+    /* Carousel finished 11/08/24 */
+
+    
