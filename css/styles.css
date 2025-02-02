@@ -1,0 +1,21 @@
+body {
+    background-color: rgba(0, 0, 0, 0.904);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(238, 234, 237);
+}
+
+main {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    display: block;
+    float: right;
+}
+
+p {
+    width: 70%;
+    text-align: center;
+}
