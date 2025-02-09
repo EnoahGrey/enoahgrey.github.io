@@ -10,12 +10,21 @@ main {
     margin-right: auto;
 }
 
+#Welcome {
+    font-size:xx-large;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
 img {
+    padding-left: 10px;
     display: block;
     float: right;
 }
 
 p {
-    width: 70%;
     text-align: center;
 }
