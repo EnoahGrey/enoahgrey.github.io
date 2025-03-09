@@ -4,10 +4,40 @@ body {
     color: rgb(238, 234, 237);
 }
 
+header {
+    background-color: #222222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #444;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+	font-size: 20px;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+	padding: 10px;
+}
+
+nav a:hover {
+	color: #61bb8e;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
 main {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 20px;
 }
 
 #Welcome {

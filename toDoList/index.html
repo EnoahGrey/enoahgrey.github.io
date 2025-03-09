@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDO List - Asignment 6</title>
+    <!--In this assignment, you will start building a to-do list for your homepage. It will not be a full-featured to-do list, but it will allow the user to add items.  -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <div id="Welcome"><h1>Welcome</h1></div>
+    </header>
+    <nav>
+        <!--If you don't want to clutter up your homepage, you can create a new page for this assignment. Just make sure that it's linked from your homepage.-->
+        <a href="/index.html" id="home" class="active">Home</a>
+        <a href="#toDo" id="toDo" class="active">To Do List</a>
+        <a href="#" id="contact">Contact</a>
+    </nav>
+    <main>
+        <!--Carousel added 02/28/2025-->
+            <div id="carousel">
+                <img alt="Image 1">
+                <img alt="Image 2">
+                <img alt="Image 3">
+            </div>
+            <div id="buttons">
+                <button id="prev">Previous</button>
+                <button id="next">Next</button>
+            </div>
+        <!--Carousel added 02/28/2025-->
+        <h2>To Do List</h2>
+        <ul id="todo-list"><!--Listed items go here--></ul>
+        <input type="text" id="new-todo" placeholder="Add a new item">
+        <button type="button" id="addDo">Add To Do</button>
+        <button type="button" id="ClearDos">Clear To Dos</button>
+    </main>
+    
+</body>
+<script src="/site.js"></script>
+</html>

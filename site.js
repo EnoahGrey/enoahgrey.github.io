@@ -55,13 +55,9 @@ const Welcome = document.getElementById('Welcome')
             showImages()
         }
 
-        setTimeout(() => {
-            // code to run ONCE after 5 seconds
-            nextImage()
-        }, 5000)
         setInterval(() => {
             // code to run EVERY 5 seconds
-            setInterval()
+            nextImage()
         }, 5000)
 
         
@@ -71,5 +67,76 @@ const Welcome = document.getElementById('Welcome')
         nextButton.addEventListener('click', () => {
             nextImage()
         })
+/*Carousel 02/28/2025*/
 
-    /*Carousel 02/28/2025*/
+/*To Do List 03/08/2025*/
+    //The to-do list should allow the user to add items to the list. The list should be saved to local storage so that the items persist even after the page is reloaded.
+      
+    // 2. Create a function that will create and add new list items to the DOM. This function should be an arrow function called renderTodos. Call the function when the page loads to display any existing items. You will then call the function again when the user adds a new item to the list.
+    function renderTodos()
+    {
+        // Get the list from local storage
+        const todos = document.getElementById('todo-list');
+        
+        // Clear the li's before we recreate them
+        todos.innerHTML = ''
+
+        const getToDo = localStorage.getItem('todo-list')
+        try
+        {
+            // 3. In your render function, use an array method to loop through the list of items. (Don't use a for loop.) 
+            // Create and add new list items to the DOM
+            const logDoList = ({text, completed}) =>
+            {
+                console.log(text, completed)
+
+                const li = document.createElement('li')
+                li.textContent = `${text}: ${completed}`
+                todos.append(li)
+            }
+            JSON.parse(getToDo).forEach(logDoList)
+        }
+        catch
+        {
+            console.log('invalid JSON in local storage')
+        }
+        console.log('Testing rednerToDos')
+    }
+
+    window.onload = renderTodos
+
+    function addToDos()
+    {
+        // Get the list from local storage
+        const todos = JSON.parse(localStorage.getItem('todo-list')) || []
+
+        // 1. The to-do list should store items in local storage. It should be an array of objects, where each object has a text property and a completed property.
+        // 4. When the user adds an item to the list, it should be added to local storage. After it's been added, call the function you created in step 2 to update the html.
+        // Add a new item to the list
+        todos.push({ text: document.getElementById('new-todo').value, completed: false })
+
+        // Save the list to local storage
+        localStorage.setItem('todo-list', JSON.stringify(todos))
+
+        renderTodos()
+    }
+
+    function clearToDos()
+    {
+        // Get the list from local storage
+        const todos = document.getElementById('todo-list');
+        
+        // Clear the li's before we recreate them
+        todos.innerHTML = ''
+
+        const getToDo = localStorage.removeItem('todo-list')
+    }
+
+    addDo.addEventListener('click', () => {
+        addToDos()
+    })    
+
+    ClearDos.addEventListener('click', () => {
+        clearToDos()
+    })    
+/*To Do List 03/08/2025*/
