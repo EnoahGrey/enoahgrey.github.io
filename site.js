@@ -20,7 +20,41 @@ const Welcome = document.getElementById('Welcome')
         Welcome.textContent = 'Evening seekers of this page~'
     }
 
-    /*Carousel 02/28/2025*/
+// /*API Fetch 03/15/2025*/
+
+(async () => {
+    
+    // getRandomPokemon
+    const getRandomPokemon = async () => {
+        const url = 'https://pokeapi.co/api/v2/pokemon/' + Math.floor(Math.random() * 150)
+        const response = await fetch(url)
+        const json = await response.json()
+        const {name, sprites} = json
+        const {front_default} = sprites
+        console.log(front_default)
+        console.log(name)
+        return {name, front_default}
+    }
+
+    // renderPokemon
+    const renderPokemon = pokemon => {
+    
+        const img = document.createElement('img')
+        img.src = pokemon.front_default
+        img.alt = pokemon.name
+        const div = document.getElementById('pokemonSprite')
+        div.append(img)
+    }
+    const pokemon = await getRandomPokemon()
+    renderPokemon(pokemon)
+})()
+
+/* After adding API Fetch - 2 errors ocure in Console (likes 168 & 115 of site.js file). Unsure why this broke after adding API. Ask about it.*/
+// /*API Fetch 03/15/2025*/
+
+
+
+/*Carousel 02/28/2025*/
         const urls = [
             'http://www.dorkistan.com/Images/PFRPG_Tengu.gif', //Tengu
             'https://files.d20.io/images/366922689/Mxo_koiV5H6PTU5lLsIZbA/original.png', //Human
