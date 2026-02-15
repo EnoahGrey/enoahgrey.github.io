@@ -17,3 +17,7 @@ if (isMorning){
 }
 
 document.querySelector('#welcome').textContent = welcomeMessage
+
+
+const secretMessage = "It's a secret to everybody. The legend of Zelda: Staring Link (not Zelda..)."
+localStorage.setItem('Secret Message', secretMessage)
