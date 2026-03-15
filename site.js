@@ -89,7 +89,10 @@ if(document.title === 'Lists') {
         localStorage.setItem('todoItems', JSON.stringify(todoItems))
     }
 
-    const updateList = () => {
+    const renderTodos = () => {
+
+        // get the list from local storage or use an empty array if it doesn't exist
+        todoItems = JSON.parse(localStorage.getItem('todoItems')) || []
 
         todoItems.forEach(todos => {
             const li = document.createElement('li') // create new li element
@@ -104,19 +107,21 @@ if(document.title === 'Lists') {
         });
     }
 
-    updateList()
+    renderTodos()
     
     // add new item to the list
-    toDoButton.addEventListener('click', () => {  
+    document.querySelector('#toDoButton').addEventListener('click', () => {
+                
+        console.log(document.querySelector('#new-todo').value)
         // add a new item to the list
-        todoItems.push({text: input.value, completed: false})
+        todoItems.push({text: document.querySelector('#new-todo').value, completed: false})
         // save the list to local storage
         localStorage.setItem('todoItems', JSON.stringify(todoItems))
 
         // clear the list display before refreshing displayed list
         listToDo.innerHTML = ''
-        
-        updateList()
+
+        renderTodos()
     })
 
     
