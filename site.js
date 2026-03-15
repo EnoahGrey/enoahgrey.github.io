@@ -1,5 +1,8 @@
 
 // put all Home page specific functionality inside this if statement so it only runs on the homepage
+
+// Assignment 5 - Carousel
+// Assignment 7 - API Fetch
 if (document.title === 'Home') {
 
     console.log("Console.log: 'Testing'. This works~ ")
@@ -67,6 +70,30 @@ if (document.title === 'Home') {
     }, 5000)
 
     showImages()
+
+    // Assignment 7 - API Fetch
+
+    // const img = document.createElement('img')
+    // img.src = getRandomPokemon() // url of the image from the 'front_default' property
+    // img.alt = '#pokemon' // name of the pokemon
+    // parentElement.append(img)
+
+    const getRandomPokemon = () => {
+        const randomId = Math.floor(Math.random() * 898) + 1 // get a random pokemon id between 1 and 898
+
+        fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(pokemon)
+                const img = document.createElement('img')
+                img.src = data.sprites.front_default // url of the image from the 'front_default' property
+                img.alt = data.name // name of the pokemon
+                document.querySelector('#pokemon').append(img)
+            })
+            .catch(error => console.error('Error fetching pokemon:', error))
+    }
+
+    getRandomPokemon()
 }
 
 // Assignment 6 - To-Do List
@@ -122,7 +149,5 @@ if(document.title === 'Lists') {
         listToDo.innerHTML = ''
 
         renderTodos()
-    })
-
-    
-}   
+    })    
+}
